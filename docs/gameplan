@@ -15,3 +15,21 @@ telemetry packet. Default will support serial and tcp
 - A user overridable send function. The user is responsible for defining header and crc
 information. Default will support serial and tcp.
 
+
+Spitballing area:
+Telemetry defined by csv.
+Each physical packet can be defined by a different file.
+Base format:
+NAME, PACKETTYPE, DATALENGTH
+optional:
+DATATYPE, UNITS, LOW ERROR, LOW WARNING, HIGH WARNING, HIGH ERROR, CONVERSION
+
+COMMANDS
+NAME, COMMAND_ID,
+NAME, COMMAND_ID, PARAM, LENGTH
+optional:
+DATATYPE, UNITS, HIGH LIMIT, LOW LIMIT, CONVERSION
+
+
+RANDOM:
+Gonna be a pain to parse user input and flow through conversion.
