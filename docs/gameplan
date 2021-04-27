@@ -1,0 +1,17 @@
+The following specifies the game plan for creating a simple telemetry and command
+program for interfacing with hardware. I will strive for a simple interface that gets a full
+command and telemetry system up and running as fast as possible.
+
+Requirements:
+- Way to specify telemetry packets. Must be able to support multiple packets, with each
+packet defined as a list of parameters with lengths defined. Offsets will be computed internally.
+
+- Way to specify commands, which consists of a command identifier and a list of parameters.
+Needs the ability to have a command type identifier as well. No nesting beyond that.
+
+- A user overridable receive function. This function must return a list form of the received
+telemetry packet. Default will support serial and tcp
+
+- A user overridable send function. The user is responsible for defining header and crc
+information. Default will support serial and tcp.
+
